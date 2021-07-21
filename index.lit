@@ -1,0 +1,32 @@
+# 🌱 parc.land
+
+*Still very much a work in progress...*
+
+We have a vision to create a digital communal green space. A *home for __your__* [[Digital Garden]].
+
+— *An Utopian*
+
+```css !inline viewer=style !hidemeta
+body {
+  padding-bottom: 50vh;
+  background-image: url('1to1.png');
+  background-position: bottom center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  --bg: #91C9FB;
+  --text-primary-color: green;
+  font-family: sans-serif;
+}
+
+#lit-header {
+  display: none;
+}
+
+cell .editor {
+  background-color: white;
+}
+
+h1 { color: white; font-famil: sans-serif; }
+```
+
+

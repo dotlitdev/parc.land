@@ -1,0 +1,68 @@
+# Config
+
+## Table of Contents
+
+## Settings
+
+### Theme
+
+
+```css !plugin type=theme
+body {
+  font-family: sans-serif;
+  --bg: white;
+  --text-color: black;
+  --text-primary-color: rgb(3,104,243);
+  --text-secondary-color: #666;
+  --divider-subtle: #efefef;
+}
+```
+
+### GitHub 
+
+#### Personal Access Token
+
+1. Set up a new GitHub repository to save your updates to. 
+2. Create a [GitHub Access Token](https://github.com/settings/tokens)
+3. Then run the *Cell* below.
+
+```js #connect #github !collapse > md
+const settings = {
+    username: prompt("GitHub username"),
+    repository: prompt("GitHub repository"),
+    branch: "main",
+    prefix: "",
+};
+
+return (async (fn) => {
+  if (typeof localStorage === "undefined") return "No localStorage available.";
+
+  const __key = "ghSettings";
+  const display = fn => {
+      return ""
+  }
+
+  const current = localStorage.getItem(__key);
+  let token
+  if (current) {
+    let data = JSON.parse(current);
+    if (data && data.token && confirm("Continue using existing token?")) token = data.token
+  }
+
+  token = token || prompt(
+    `Enter a GitHub Access Token for:\n Repository: ${settings.username}/${settings.repository}`
+  );
+
+  if (token) {
+    localStorage.setItem(__key, JSON.stringify({ ...settings, token }));
+    return "All set up.\n\n" + display();
+  }
+
+  return "No **token** provided. Not set up.\n\n" + display();
+})();
+```
+
+
+
+
+

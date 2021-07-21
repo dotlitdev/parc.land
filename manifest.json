@@ -1,0 +1,169 @@
+{
+    "meta": {
+        "totalSourceFiles": 8,
+        "totalUsableSourceFiles": 8,
+        "failures": {}
+    },
+    "nodes": [
+        {
+            "id": "/404.lit",
+            "backlinks": [],
+            "url": "../../../../../404.html",
+            "exists": true,
+            "title": "Not yet found...",
+            "links": 0,
+            "size": 21
+        },
+        {
+            "id": "/anutopian/index.lit",
+            "backlinks": [
+                {
+                    "id": "/residents.lit",
+                    "url": "../../../../../residents.html",
+                    "title": "Residents"
+                }
+            ],
+            "url": "../../../../../anutopian/index.html",
+            "exists": true,
+            "title": "An Utopian",
+            "links": 0,
+            "size": 12
+        },
+        {
+            "id": "/config.lit",
+            "backlinks": [
+                {
+                    "id": "/digital_garden.lit",
+                    "url": "../../../../../digital_garden.html",
+                    "title": "Digital Gardens"
+                }
+            ],
+            "url": "../../../../../config.html",
+            "exists": true,
+            "title": "Config",
+            "links": 5,
+            "size": 1382
+        },
+        {
+            "id": "/digital_garden.lit",
+            "backlinks": [
+                {
+                    "id": "/index.lit",
+                    "url": "../../../../../index.html",
+                    "title": "🌱 parc.land"
+                },
+                {
+                    "id": "/visitor_centre.lit",
+                    "url": "../../../../../visitor_centre.html",
+                    "title": "ℹ️ Visitor Centre"
+                }
+            ],
+            "url": "../../../../../digital_garden.html",
+            "exists": true,
+            "title": "Digital Gardens",
+            "links": 8,
+            "size": 1526
+        },
+        {
+            "id": "/index.lit",
+            "backlinks": [
+                {
+                    "id": "/visitor_centre.lit",
+                    "url": "../../../../../visitor_centre.html",
+                    "title": "ℹ️ Visitor Centre"
+                }
+            ],
+            "url": "../../../../../index.html",
+            "exists": true,
+            "title": "🌱 parc.land",
+            "links": 1,
+            "size": 589
+        },
+        {
+            "id": "/README.md",
+            "backlinks": [],
+            "url": "../../../../../README.html",
+            "exists": true,
+            "title": "parc.land",
+            "links": 0,
+            "size": 11
+        },
+        {
+            "id": "/residents.lit",
+            "backlinks": [
+                {
+                    "id": "/digital_garden.lit",
+                    "url": "../../../../../digital_garden.html",
+                    "title": "Digital Gardens"
+                }
+            ],
+            "url": "../../../../../residents.html",
+            "exists": true,
+            "title": "Residents",
+            "links": 1,
+            "size": 28
+        },
+        {
+            "id": "/visitor_centre.lit",
+            "backlinks": [
+                {
+                    "id": "/digital_garden.lit",
+                    "url": "../../../../../digital_garden.html",
+                    "title": "Digital Gardens"
+                }
+            ],
+            "url": "../../../../../visitor_centre.html",
+            "exists": true,
+            "title": "ℹ️ Visitor Centre",
+            "links": 6,
+            "size": 334
+        },
+        {
+            "id": "/residency_application.lit",
+            "backlinks": [
+                {
+                    "id": "/visitor_centre.lit",
+                    "url": "../../../../../visitor_centre.html",
+                    "title": "ℹ️ Visitor Centre"
+                }
+            ],
+            "url": "residency_application.html",
+            "exists": false,
+            "type": "link"
+        }
+    ],
+    "links": [
+        {
+            "source": "/residents.lit",
+            "target": "/anutopian/index.lit"
+        },
+        {
+            "source": "/digital_garden.lit",
+            "target": "/config.lit"
+        },
+        {
+            "source": "/index.lit",
+            "target": "/digital_garden.lit"
+        },
+        {
+            "source": "/visitor_centre.lit",
+            "target": "/digital_garden.lit"
+        },
+        {
+            "source": "/visitor_centre.lit",
+            "target": "/index.lit"
+        },
+        {
+            "source": "/digital_garden.lit",
+            "target": "/residents.lit"
+        },
+        {
+            "source": "/digital_garden.lit",
+            "target": "/visitor_centre.lit"
+        },
+        {
+            "source": "/visitor_centre.lit",
+            "target": "/residency_application.lit"
+        }
+    ]
+}

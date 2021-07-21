@@ -1,0 +1,77 @@
+<html data-reactroot=""><head><title>Config</title><meta name="litsrc" value="/config.lit"/><meta name="litroot" value="/"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/><link rel="stylesheet" href="/style.css"/></head><body><div id="lit-app"><div id="lit-header"><menu class="horizontal open has-children"><li class="MenuTitle"><a href="/">Home</a></li><li class="MenuItems"><menu class="has-children" disabled=""><li class="MenuTitle">File</li></menu><menu class="has-children" disabled=""><li class="MenuTitle">Cell</li></menu><menu class="has-children" disabled=""><li class="MenuTitle">Section</li></menu><menu class="has-children" disabled=""><li class="MenuTitle">Help</li></menu><menu class="has-children right"><li class="MenuTitle"><span class="led led-grey"></span><span class="led led-grey"></span><span class="led led-grey"></span></li></menu></li></menu></div><style>body {
+  font-family: sans-serif;
+  --bg: white;
+  --text-color: black;
+  --text-primary-color: rgb(3,104,243);
+  --text-secondary-color: #666;
+  --divider-subtle: #efefef;
+}</style><style>body {
+  font-family: sans-serif;
+  --bg: white;
+  --text-color: black;
+  --text-primary-color: rgb(3,104,243);
+  --text-secondary-color: #666;
+  --divider-subtle: #efefef;
+}</style><div id="content"><section id="config" depth="1" class="" startpos="1:1-0" endpos="3:21-30"><cell startpos="1:1-0" endpos="1:9-8"><div class="cell-content"><h1>Config</h1></div></cell><section id="table-of-contents" depth="2" class="" startpos="3:1-10" endpos="3:21-30"><cell startpos="3:1-10" endpos="3:21-30"><div class="cell-content"><h2>Table of Contents</h2><ul>
+<li>
+<p><a class="fragment" href="#settings" filepath="/config.lit" root="" data="[object Object]" canonical="#settings">Settings<span class="linkIcon">§</span></a></p>
+<ul>
+<li>
+<p><a class="fragment" href="#theme" filepath="/config.lit" root="" data="[object Object]" canonical="#theme">Theme<span class="linkIcon">§</span></a></p>
+</li>
+<li>
+<p><a class="fragment" href="#github" filepath="/config.lit" root="" data="[object Object]" canonical="#github">GitHub<span class="linkIcon">§</span></a></p>
+<ul>
+<li><a class="fragment" href="#personal-access-token" filepath="/config.lit" root="" data="[object Object]" canonical="#personal-access-token">Personal Access Token<span class="linkIcon">§</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></cell></section></section>
+<section id="settings" depth="2" class="" startpos="5:1-32" endpos="19:4-261"><cell startpos="5:1-32" endpos="5:12-43"><div class="cell-content"><h2>Settings</h2></div></cell><section id="theme" depth="3" class="" startpos="7:1-45" endpos="19:4-261"><cell startpos="7:1-45" endpos="7:10-54"><div class="cell-content"><h3>Theme</h3></div></cell><cell startpos="10:1-57" endpos="19:4-261" class="code"><div class="cell-content"><codecell class="dir-plugin lang-css local"><span class="meta"><span class="lang">css</span><span style="color:white;background-color:#c5476f" class="directive dir-plugin">plugin</span><span class="attribute attr-type" style="color:white;background-color:#0368f3">type=theme</span></span><pre><code class="css">body {
+  font-family: sans-serif;
+  --bg: white;
+  --text-color: black;
+  --text-primary-color: rgb(3,104,243);
+  --text-secondary-color: #666;
+  --divider-subtle: #efefef;
+}
+</code></pre></codecell></div></cell></section></section>
+<section id="github" depth="3" class="" startpos="21:1-263" endpos="63:4-1376"><cell startpos="21:1-263" endpos="21:12-274"><div class="cell-content"><h3>GitHub</h3></div></cell><section id="personal-access-token" depth="4" class="" startpos="23:1-276" endpos="63:4-1376"><cell startpos="23:1-276" endpos="27:30-463"><div class="cell-content"><h4>Personal Access Token</h4><ol>
+<li>Set up a new GitHub repository to save your updates to.</li>
+<li>Create a <a class="external" href="https://github.com/settings/tokens" filepath="/config.lit" root="" data="[object Object]" canonical="https://github.com/settings/tokens">GitHub Access Token<span class="linkIcon">↗</span></a></li>
+<li>Then run the <em>Cell</em> below.</li>
+</ol></div></cell><cell startpos="29:1-465" endpos="63:4-1376" class="code"><div class="cell-content"><codecell class="dir-collapse tag-connect tag-github lang-js local collapsed"><span class="meta"><span class="lang">js</span><span style="color:black;background-color:#da5323" class="directive dir-collapse">collapse</span><span style="color:black;background-color:#38b478" class="tag">connect</span><span style="color:black;background-color:#b5c11b" class="tag">github</span><span class="output">&gt; md</span></span><pre><code class="js">const settings = {
+    username: prompt(&quot;GitHub username&quot;),
+    repository: prompt(&quot;GitHub repository&quot;),
+    branch: &quot;main&quot;,
+    prefix: &quot;&quot;,
+};
+
+return (async (fn) =&gt; {
+  if (typeof localStorage === &quot;undefined&quot;) return &quot;No localStorage available.&quot;;
+
+  const __key = &quot;ghSettings&quot;;
+  const display = fn =&gt; {
+      return &quot;&quot;
+  }
+
+  const current = localStorage.getItem(__key);
+  let token
+  if (current) {
+    let data = JSON.parse(current);
+    if (data &amp;&amp; data.token &amp;&amp; confirm(&quot;Continue using existing token?&quot;)) token = data.token
+  }
+
+  token = token || prompt(
+    `Enter a GitHub Access Token for:\n Repository: ${settings.username}/${settings.repository}`
+  );
+
+  if (token) {
+    localStorage.setItem(__key, JSON.stringify({ ...settings, token }));
+    return &quot;All set up.\n\n&quot; + display();
+  }
+
+  return &quot;No **token** provided. Not set up.\n\n&quot; + display();
+})();
+</code></pre></codecell></div></cell></section></section></div></div><div id="backlinks"><h4>Backlinks (1)</h4><ol><li><a title="Digital Gardens" href="/digital_garden.html">Digital Gardens</a></li></ol></div><script src="//cdn.jsdelivr.net/npm/eruda"></script><script>eruda.init();</script><script async="" src="/web.bundle.js"></script></body></html>
